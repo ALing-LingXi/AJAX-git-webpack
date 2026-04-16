@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="my-p"></div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- 这里获取了一个全局的aioxs函数 -->
+   <script>
+    // 函数里面进行参数配置
+    axios({
+      url:"http://hmajax.itheima.net/api/province"
+    }).then(result=>{
+      console.log(result.data.list)
+      document.querySelector(".my-p").innerHTML=result.data.list.join("<br>")
+    })
+   </script>
+</body>
+</html>

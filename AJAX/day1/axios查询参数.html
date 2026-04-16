@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="bs"></div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // 通过配置查询参数params来获取对应的数据
+    axios({
+      url:"http://hmajax.itheima.net/api/city",
+      params:{
+        pname:"江西省"
+      }
+    }).then(result=>{
+      console.log(result.data.list)
+      document.querySelector(".bs").innerHTML=result.data.list.join("<br>")
+    })
+  </script>
+</body>
+</html>
